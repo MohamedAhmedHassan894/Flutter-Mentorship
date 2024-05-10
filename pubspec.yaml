@@ -34,6 +34,8 @@ dependencies:
   mockito: ^5.4.4
   # Local cache
   shared_preferences: ^2.2.3
+  # To Display SVG images
+  flutter_svg: ^2.0.10
 
 dev_dependencies:
   build_runner: ^2.4.9
