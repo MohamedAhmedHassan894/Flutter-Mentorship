@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/functions.dart';
 import '../bottom_widgets.dart';
 import '../text_with_animation.dart';
 part 'main_text.dart';
@@ -10,12 +9,16 @@ class TextWithButtonAndIndicator extends StatelessWidget {
     required this.currentIndex,
     required this.currentColor,
     required this.controller,
-    super.key,
+    super.key, required this.currentTitle, required this.currentSubTitle, required this.progress,
   });
 
   final int currentIndex;
   final Color currentColor;
   final PageController controller;
+  final String currentTitle;
+  final String currentSubTitle;
+  final Tween<double> progress;
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,10 @@ class TextWithButtonAndIndicator extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
-          child: TextWithAnimation(currentIndex: currentIndex,),
+          child: TextWithAnimation(
+            currentTitle: currentTitle,
+            currentSubTitle: currentSubTitle,
+            currentIndex: currentIndex,),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -33,6 +39,7 @@ class TextWithButtonAndIndicator extends StatelessWidget {
             bottom: 24,
           ),
           child: BottomWidgets(
+            progress:progress ,
             controller: controller,
             currentColor: currentColor,
             currentIndex: currentIndex,

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../generated/assets.dart';
+import '../../generated/assets.dart';
 
 class BackGroundImage extends StatelessWidget {
   const BackGroundImage({

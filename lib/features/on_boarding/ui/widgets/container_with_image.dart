@@ -22,7 +22,7 @@ class PageViewBuilder extends StatelessWidget {
             path: Assets.imagesLonelyAstronaut,
         ),
         WelcomeSlide(
-          path:  Assets.imagesRocketTakeoff,
+          path:  Assets.imagesRocket,
         ),
         WelcomeSlide(
           path: Assets.imagesDragon,
