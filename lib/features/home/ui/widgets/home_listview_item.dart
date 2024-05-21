@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mentorship/core/database/network/end_points.dart';
+import 'package:flutter_mentorship/core/routing/routes.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/extensions.dart';
 
 class HomeListViewItem extends StatefulWidget {
   const HomeListViewItem({
@@ -59,7 +61,7 @@ class _HomeListViewItemState extends State<HomeListViewItem> {
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey)),
               onPressed: () {
-
+                context.pushNamed(Routes.featureItems, arguments: getTheEndPoint(items[widget.index],));
               },
               icon: const Icon(
                 Icons.arrow_forward_ios_outlined,

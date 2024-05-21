@@ -1,7 +1,7 @@
 abstract class Routes {
   static const String onBoardingPage = '/onBoardingPage';
   static const String homePage = '/homePage';
-  static const String splashPage = '/splashPage';
+  static const String featureItems = '/featureItems';
   static const String rocketsPage = 'rocketsPage';
   static const String shipsPage = 'shipsPage';
   static const String launchesPage = 'launchesPage';
