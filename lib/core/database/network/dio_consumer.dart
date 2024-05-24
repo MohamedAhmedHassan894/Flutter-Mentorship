@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 import '../../errors/failures.dart';
@@ -20,7 +21,7 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future get(String path,
+  Future<Either<ServerFailure,Response>> get1(String path,
       {Object? data, Map<String, dynamic>? queryParameters}) async {
     try {
       final response = await dio.get(
@@ -28,14 +29,14 @@ class DioConsumer extends ApiConsumer {
         data: data,
         queryParameters: queryParameters,
       );
-      return response.data;
+      return Right(response);
     } on DioException catch (e) {
-      ServerFailure(message: e.toString());
+      return left(ServerFailure(message: e.toString()));
     }
   }
 
   @override
-  Future post({
+  Future<Either<ServerFailure,Response>> post1({
     required String path,
     dynamic data,
     Map<String, dynamic>? queryParameters,
@@ -47,9 +48,9 @@ class DioConsumer extends ApiConsumer {
         data: isFromData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
-      return response.data;
+      return Right(response);
     } on DioException catch (e) {
-      ServerFailure(message: e.toString());
+      return left(ServerFailure(message: e.toString()));
     }
   }
 }

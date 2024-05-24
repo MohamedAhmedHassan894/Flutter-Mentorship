@@ -20,7 +20,7 @@ class DragonModel {
 	HeightWTrunk? heightWTrunk;
 	Diameter? diameter;
 	String? firstFlight;
-	List<String>? flickrImages;
+	List<dynamic>? flickrImages;
 	String? name;
 	String? type;
 	bool? active;
@@ -89,7 +89,7 @@ class DragonModel {
 						? null
 						: Diameter.fromJson(json['diameter'] as Map<String, dynamic>),
 				firstFlight: json['first_flight'] as String?,
-				flickrImages: json['flickr_images'] as List<String>?,
+				flickrImages: json['flickr_images'] as List<dynamic>?,
 				name: json['name'] as String?,
 				type: json['type'] as String?,
 				active: json['active'] as bool?,

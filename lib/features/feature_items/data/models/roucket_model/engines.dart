@@ -13,7 +13,7 @@ class Engines {
 	int? engineLossMax;
 	String? propellant1;
 	String? propellant2;
-	int? thrustToWeight;
+	num? thrustToWeight;
 
 	Engines({
 		this.isp, 
@@ -46,7 +46,7 @@ class Engines {
 				engineLossMax: json['engine_loss_max'] as int?,
 				propellant1: json['propellant_1'] as String?,
 				propellant2: json['propellant_2'] as String?,
-				thrustToWeight: json['thrust_to_weight'] as int?,
+				thrustToWeight: json['thrust_to_weight'] as num?,
 			);
 
 	Map<String, dynamic> toJson() => {

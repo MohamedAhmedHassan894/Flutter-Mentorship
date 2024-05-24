@@ -5,5 +5,4 @@ class EndPoint {
   static String launches = "launches";
   static String rockets = "rockets";
   static String crew = "crew";
-  static String landpads = "landpads";
 }

@@ -16,7 +16,7 @@ class RoucketModel {
 	Engines? engines;
 	LandingLegs? landingLegs;
 	List<PayloadWeight>? payloadWeights;
-	List<String>? flickrImages;
+	List<dynamic>? flickrImages;
 	String? name;
 	String? type;
 	bool? active;
@@ -81,7 +81,7 @@ class RoucketModel {
 				payloadWeights: (json['payload_weights'] as List<dynamic>?)
 						?.map((e) => PayloadWeight.fromJson(e as Map<String, dynamic>))
 						.toList(),
-				flickrImages: json['flickr_images'] as List<String>?,
+				flickrImages: json['flickr_images'] as List<dynamic>?,
 				name: json['name'] as String?,
 				type: json['type'] as String?,
 				active: json['active'] as bool?,

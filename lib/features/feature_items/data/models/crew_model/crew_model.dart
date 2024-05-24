@@ -3,7 +3,7 @@ class CrewModel {
 	String? agency;
 	String? image;
 	String? wikipedia;
-	List<String>? launches;
+	List<dynamic>? launches;
 	String? status;
 	String? id;
 
@@ -22,7 +22,7 @@ class CrewModel {
 				agency: json['agency'] as String?,
 				image: json['image'] as String?,
 				wikipedia: json['wikipedia'] as String?,
-				launches: json['launches'] as List<String>?,
+				launches: json['launches'] as List<dynamic>?,
 				status: json['status'] as String?,
 				id: json['id'] as String?,
 			);

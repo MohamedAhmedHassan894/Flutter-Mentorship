@@ -17,7 +17,9 @@ class UpperScreen extends StatelessWidget {
           alignment: Alignment.center,
           child: Padding(
             padding: EdgeInsets.only(top: 5.0),
-            child: CustomAppBar(),
+            child: CustomAppBar(
+              title: 'SpaceX',
+            ),
           ),
         ),
         SizedBox(

@@ -17,7 +17,7 @@ class LaunchesModel {
 	List<dynamic>? crew;
 	List<dynamic>? ships;
 	List<dynamic>? capsules;
-	List<String>? payloads;
+	List<dynamic>? payloads;
 	String? launchpad;
 	int? flightNumber;
 	String? name;
@@ -84,7 +84,7 @@ class LaunchesModel {
 				crew: json['crew'] as List<dynamic>?,
 				ships: json['ships'] as List<dynamic>?,
 				capsules: json['capsules'] as List<dynamic>?,
-				payloads: json['payloads'] as List<String>?,
+				payloads: json['payloads'] as List<dynamic>?,
 				launchpad: json['launchpad'] as String?,
 				flightNumber: json['flight_number'] as int?,
 				name: json['name'] as String?,

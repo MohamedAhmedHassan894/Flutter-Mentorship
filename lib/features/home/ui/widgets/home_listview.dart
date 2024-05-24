@@ -13,7 +13,7 @@ class HomeListView extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: ListView.builder(
-          itemCount: 6,
+          itemCount: 5,
           itemBuilder: (context, index) {
             return HomeListViewItem(
               index: index,

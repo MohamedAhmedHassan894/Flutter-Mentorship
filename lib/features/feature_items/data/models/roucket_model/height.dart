@@ -1,12 +1,12 @@
 class Height {
 	double? meters;
-	int? feet;
+	num? feet;
 
 	Height({this.meters, this.feet});
 
 	factory Height.fromJson(Map<String, dynamic> json) => Height(
 				meters: (json['meters'] as num?)?.toDouble(),
-				feet: json['feet'] as int?,
+				feet: json['feet'] as num?,
 			);
 
 	Map<String, dynamic> toJson() => {
