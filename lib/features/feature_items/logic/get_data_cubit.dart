@@ -5,6 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mentorship/core/database/network/api_consumer.dart';
+import 'package:flutter_mentorship/core/utils/app_constants.dart';
 import 'package:flutter_mentorship/features/feature_items/data/models/company_info_model/company_info_model.dart';
 import 'package:flutter_mentorship/features/feature_items/data/models/crew_model/crew_model.dart';
 import 'package:flutter_mentorship/features/feature_items/data/models/dragons_model/dragon_model.dart';
@@ -108,7 +109,7 @@ class GetDataCubit extends Cubit<GetDataState> {
           List<FeatureItemModel> featureItemModel = [];
           company = CompanyInfoModel.fromJson(result.data);
           featureItemModel = [
-            FeatureItemModel(name: company.name!, imageURL: 'https://i.pinimg.com/564x/7a/01/56/7a01565573d66e87ef5f7be8b111f944.jpg')
+            FeatureItemModel(name: company.name!, imageURL: companyImage)
           ];
           return FeatureAllData(featureItemModel: featureItemModel,company: company);
         }

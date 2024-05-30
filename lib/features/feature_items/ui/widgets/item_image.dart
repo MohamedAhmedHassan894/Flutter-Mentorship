@@ -13,14 +13,16 @@ class ItemImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(13), topRight: Radius.circular(13)),
-      child: CachedNetworkImage(
-        imageUrl:
-        BlocProvider.of<GetDataCubit>(context).allData.featureItemModel[index].imageURL,
-        width: MediaQuery.sizeOf(context).width,
-        height: MediaQuery.sizeOf(context).height / 2.1,
-        fit: BoxFit.cover,
+      borderRadius: const BorderRadius.all(Radius.circular(13),),
+      child: Hero(
+        tag: index,
+        child: CachedNetworkImage(
+          imageUrl:
+          BlocProvider.of<GetDataCubit>(context).allData.featureItemModel[index].imageURL,
+          width: MediaQuery.sizeOf(context).width,
+          height: MediaQuery.sizeOf(context).height / 2.3,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

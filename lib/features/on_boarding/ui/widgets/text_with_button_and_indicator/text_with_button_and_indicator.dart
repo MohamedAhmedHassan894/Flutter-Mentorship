@@ -7,17 +7,13 @@ part 'main_text.dart';
 class TextWithButtonAndIndicator extends StatelessWidget {
   const TextWithButtonAndIndicator({
     required this.currentIndex,
-    required this.currentColor,
     required this.controller,
-    super.key, required this.currentTitle, required this.currentSubTitle, required this.progress,
+    super.key,
   });
 
   final int currentIndex;
-  final Color currentColor;
   final PageController controller;
-  final String currentTitle;
-  final String currentSubTitle;
-  final Tween<double> progress;
+
 
 
   @override
@@ -28,8 +24,6 @@ class TextWithButtonAndIndicator extends StatelessWidget {
       children: [
         Expanded(
           child: TextWithAnimation(
-            currentTitle: currentTitle,
-            currentSubTitle: currentSubTitle,
             currentIndex: currentIndex,),
         ),
         Padding(
@@ -39,9 +33,7 @@ class TextWithButtonAndIndicator extends StatelessWidget {
             bottom: 24,
           ),
           child: BottomWidgets(
-            progress:progress ,
             controller: controller,
-            currentColor: currentColor,
             currentIndex: currentIndex,
           ),
         ),

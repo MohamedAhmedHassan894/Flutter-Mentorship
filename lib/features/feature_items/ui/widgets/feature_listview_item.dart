@@ -12,19 +12,16 @@ class FeatureListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15.0),
-      child: Card(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ItemImage(
-              index: index,
-            ),
-            ItemTitle(
-              index: index,
-            ),
-          ],
-        ),
+      padding: const EdgeInsets.all(10.0),
+      child: Stack(
+        children: [
+          ItemImage(
+            index: index,
+          ),
+          ItemTitle(
+            index: index,
+          ),
+        ],
       ),
     );
   }

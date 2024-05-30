@@ -7,14 +7,10 @@ class BottomWidgets extends StatelessWidget {
   const BottomWidgets(
       {super.key,
       required this.currentIndex,
-      required this.currentColor,
-      required this.controller, required this.progress});
+      required this.controller,});
 
   final int currentIndex;
-  final Color currentColor;
   final PageController controller;
-  final Tween<double> progress;
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,19 +18,15 @@ class BottomWidgets extends StatelessWidget {
       children: [
         Indicator(
           currentIndex: currentIndex,
-          currentColor: currentColor,
         ),
         Stack(
           children: [
             OuterCircular(
-              progress: progress,
-              currentColor: currentColor,
               currentIndex: currentIndex,
             ),
             InsiderCircular(
                 currentIndex: currentIndex,
                 controller: controller,
-                currentColor: currentColor,
             ),
           ],
         ),

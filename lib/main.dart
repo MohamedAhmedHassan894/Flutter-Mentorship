@@ -12,6 +12,7 @@ void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   di.setupServiceLocator();
+  await CacheHelper().appInitialization();
   Bloc.observer = MyBlocObserver();
   await di.getIt<CacheHelper>().appInitialization();
   await ScreenUtil.ensureScreenSize();

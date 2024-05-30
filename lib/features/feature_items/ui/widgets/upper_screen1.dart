@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_mentorship/features/feature_items/logic/get_data_cubit.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
-import 'feature_listview_item.dart';
+import '../../../home/ui/widgets/features_list_view.dart';
 
 class UpperScreen1 extends StatefulWidget {
   const UpperScreen1({super.key, required this.endPoint});
@@ -13,7 +13,6 @@ class UpperScreen1 extends StatefulWidget {
 }
 
 class _UpperScreen1State extends State<UpperScreen1> {
-
   @override
   void initState() {
     BlocProvider.of<GetDataCubit>(context).getFeatureItemsData(widget.endPoint);
@@ -25,41 +24,31 @@ class _UpperScreen1State extends State<UpperScreen1> {
     final cubit = BlocProvider.of<GetDataCubit>(context);
     return BlocBuilder<GetDataCubit, GetDataState>(
       builder: (context, state) {
-        if(state is GetFeatureItemsDataLoading)
-          {
-            return const Center(child: CircularProgressIndicator(color: Colors.white,),);
-          }
-        if (state is GetFeatureItemsDataError)
-          {
-            return Center(child: Text(state.errorMessage),);
-          }
-        else{
+        if (state is GetFeatureItemsDataLoading) {
+          return const Center(
+            child: CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          );
+        }
+        if (state is GetFeatureItemsDataError) {
+          return Center(
+            child: Text(state.errorMessage),
+          );
+        } else {
+          final String headerTitle =  widget.endPoint[0].toUpperCase() +  widget.endPoint.substring(1);
           return Column(
             children: [
               Align(
                 alignment: Alignment.center,
                 child: CustomAppBar(
-                  title: widget.endPoint.toUpperCase(),
+                  title: headerTitle,
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: cubit.allData.featureItemModel.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return GestureDetector(
-                      onTap: (){
-
-                      },
-                      child: FeatureListViewItem(
-                        index: index,
-                      ),
-                    );
-                  },
-                ),
-              ),
+              FeaturesListView(endPoint: widget.endPoint, cubit: cubit),
             ],
           );
         }
@@ -67,6 +56,3 @@ class _UpperScreen1State extends State<UpperScreen1> {
     );
   }
 }
-
-
-

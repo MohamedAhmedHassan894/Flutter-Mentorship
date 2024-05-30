@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/animations.dart';
-import '../../../../core/utils/functions.dart';
+import '../../data/model/functions.dart';
+import '../../data/model/page_model.dart';
 
 
 class InsiderCircular extends StatelessWidget {
@@ -11,12 +12,10 @@ class InsiderCircular extends StatelessWidget {
     super.key,
     required this.currentIndex,
     required this.controller,
-    required this.currentColor,
   });
 
   final int currentIndex;
   final PageController controller;
-  final Color currentColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +28,13 @@ class InsiderCircular extends StatelessWidget {
         onTap: () => navigationViaButton(
           currentIndex,
           controller,
+          context,
         ),
         child: AnimatedContainer(
           duration: AppAnimations.defaultDuration,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: currentColor,
+            color: PageModel.pagesDetails[currentIndex].color,
           ),
           child: FittedBox(
             child: Padding(
