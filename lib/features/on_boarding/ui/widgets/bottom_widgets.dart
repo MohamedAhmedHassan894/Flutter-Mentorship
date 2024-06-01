@@ -7,11 +7,9 @@ class BottomWidgets extends StatelessWidget {
   const BottomWidgets(
       {super.key,
       required this.currentIndex,
-      required this.currentColor,
-      required this.controller});
+      required this.controller,});
 
   final int currentIndex;
-  final Color currentColor;
   final PageController controller;
   @override
   Widget build(BuildContext context) {
@@ -20,7 +18,6 @@ class BottomWidgets extends StatelessWidget {
       children: [
         Indicator(
           currentIndex: currentIndex,
-          currentColor: currentColor,
         ),
         Stack(
           children: [
@@ -30,7 +27,6 @@ class BottomWidgets extends StatelessWidget {
             InsiderCircular(
                 currentIndex: currentIndex,
                 controller: controller,
-                currentColor: currentColor,
             ),
           ],
         ),

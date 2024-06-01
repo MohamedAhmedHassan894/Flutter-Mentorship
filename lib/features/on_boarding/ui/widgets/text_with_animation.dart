@@ -3,14 +3,16 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mentorship/features/on_boarding/data/model/page_model.dart';
 import 'package:flutter_mentorship/features/on_boarding/ui/widgets/text_with_button_and_indicator/text_with_button_and_indicator.dart';
 
 import '../../../../core/utils/animations.dart';
 
 class TextWithAnimation extends StatelessWidget {
-  const TextWithAnimation({super.key, required this.currentIndex});
+  const TextWithAnimation({super.key, required this.currentIndex,});
 
   final int currentIndex;
+
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
@@ -27,7 +29,8 @@ class TextWithAnimation extends StatelessWidget {
         children: List.generate(
           3,
               (_) => MainText(
-            currentIndex: currentIndex,
+                currentTitle: PageModel.pagesDetails[currentIndex].title,
+                currentSubTitle:  PageModel.pagesDetails[currentIndex].subTitle,
           ),
         ),
       ),

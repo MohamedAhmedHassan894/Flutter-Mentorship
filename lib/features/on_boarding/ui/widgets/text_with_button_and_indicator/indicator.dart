@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/animations.dart';
+import '../../../data/model/page_model.dart';
 
 class Indicator extends StatelessWidget {
   const Indicator({
     super.key,
     required this.currentIndex,
-    required this.currentColor,
   });
 
   final int currentIndex;
-  final Color currentColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class Indicator extends StatelessWidget {
             width: index == currentIndex ? 30 : 10,
             height: 10,
             decoration: BoxDecoration(
-              color: currentColor,
+              color: PageModel.pagesDetails[currentIndex].color,
               borderRadius: BorderRadius.circular(20),
             ),
           ),

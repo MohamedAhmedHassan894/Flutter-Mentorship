@@ -2,10 +2,11 @@ part of 'text_with_button_and_indicator.dart';
 
 class MainText extends StatelessWidget {
   const MainText({super.key,
-    required this.currentIndex,
+     required this.currentTitle, required this.currentSubTitle,
   });
 
-  final int currentIndex;
+  final String currentTitle;
+  final String currentSubTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class MainText extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            getCurrentTitle(currentIndex),
+            currentTitle,
             style: const TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 24,
@@ -31,7 +32,7 @@ class MainText extends StatelessWidget {
               horizontal: 32,
             ),
             child: Text(
-              getCurrentSubtext(currentIndex),
+              currentSubTitle,
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16,
